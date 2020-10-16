@@ -6,21 +6,27 @@ Suppose the following input is supplied to the program: 8 Then, the output shoul
 import pytest
 
 
+def is_value_a_positive_integer(value):
+    return isinstance(value, int) and value >= 0
+
+
 def factorial(number: int):
     result = 1
-    if number > 0:
-        for i in range(1, number + 1):
-            result *= i
+    if is_value_a_positive_integer(number):
+        if number != 0:
+            for i in range(1, number + 1):
+                result *= i
+            return result
         return result
-    return result
+    raise ValueError
 
 
-@pytest.mark.parametrize(('number', 'result'), [(0, 1), (8, 40320), (5, 120), (-7, 1), (True, 1), (False, 1)])
+@pytest.mark.parametrize(('number', 'result'), [(0, 1), (8, 40320), (5, 120), (True, 1), (False, 1)])
 def test_factorial_valid_values(number, result):
     assert factorial(number) == result
 
 
-@pytest.mark.parametrize('value', ["A", dict, list, 0.25])
+@pytest.mark.parametrize('value', ["A", dict, list, 0.25, -7])
 def test_factorial_invalid_values(value):
-    with pytest.raises(TypeError):
+    with pytest.raises(ValueError):
         factorial(value)
