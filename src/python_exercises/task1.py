@@ -11,6 +11,6 @@ def main():
             print(number, end=',')
     print("\b")
 
-
+    # print(*(number for number in range(2000, 3201) if number%7 == 0 and number%5 != 0), sep=",")
 if __name__ == '__main__':
     main()
