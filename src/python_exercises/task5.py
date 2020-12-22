@@ -6,7 +6,7 @@ Also, include simple test function to test the class methods.
 """
 
 
-class StringConverter():
+class StringConverter:
     def __init__(self):
         self.string = ""
 
