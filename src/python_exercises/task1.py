@@ -8,8 +8,8 @@ The numbers obtained should be printed in a comma-separated sequence on a single
 def main():
     for number in range(2000, 3201):
         if number % 7 == 0 and number % 5 != 0:
-            print(number, end=',')
-    print("\b")
+            print(number, end=',') #default end is new line '\n', sep= ' ',
+    print("\b")  #'\b' is for backspace
 
     # print(*(number for number in range(2000, 3201) if number%7 == 0 and number%5 != 0), sep=",")
 if __name__ == '__main__':

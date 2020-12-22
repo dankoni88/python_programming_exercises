@@ -20,6 +20,9 @@ def factorial(number: int):
         return result
     raise ValueError
 
+#number=int(input())
+#def factoriel(x): return 1 if x <=1 else x*faktoriel(x-1)
+#print(factoriel(n))
 
 @pytest.mark.parametrize(('number', 'result'), [(0, 1), (8, 40320), (5, 120), (True, 1), (False, 1)])
 def test_factorial_valid_values(number, result):
