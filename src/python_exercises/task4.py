@@ -13,8 +13,9 @@ def get_list_and_tuple_out_of_a_sequence(sequence):
 
 
 def main():
-    sequence= input("Enter a sequence of values: ")
+    sequence = input("Enter a sequence of values: ")
     get_list_and_tuple_out_of_a_sequence(sequence)
+
 
 if __name__ == '__main__':
     main()
